@@ -1,0 +1,6 @@
+<apex:page showHeader="false" standardStylesheets="false" sidebar="false" cache="false" controller="HPDoiProcessCtlr">
+    <apex:includeScript value="{!$Resource.jQuery}"/>
+    <apex:outputPanel rendered="{! If(leadSource =='Hermes Pharma Product Portfolio' , true, false) }">
+        <c:ProductPortfolioDoiConfirmation />
+    </apex:outputPanel>    
+</apex:page>

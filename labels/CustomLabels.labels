@@ -1,0 +1,889 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomLabels xmlns="http://soap.sforce.com/2006/04/metadata">
+    <labels>
+        <fullName>A_Division_of_HERMES_Arzneimittel_GmbH</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>A Division of HERMES Arzneimittel GmbH</shortDescription>
+        <value>A Division of HERMES Arzneimittel GmbH</value>
+    </labels>
+    <labels>
+        <fullName>Agree_to_be_contacted</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Agree to be contacted</shortDescription>
+        <value>I agree to be contacted by HERMES PHARMA via</value>
+    </labels>
+    <labels>
+        <fullName>Already_Subscribed</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Already Subscribed</shortDescription>
+        <value>You have already subscribed your e-mail notification.</value>
+    </labels>
+    <labels>
+        <fullName>Already_Unsubscribed</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Already Unsubscribed</shortDescription>
+        <value>You have already unsubscribed from HERMES PHARMA</value>
+    </labels>
+    <labels>
+        <fullName>Checkbox_Email</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Checkbox Email</shortDescription>
+        <value>e-mail</value>
+    </labels>
+    <labels>
+        <fullName>Checkbox_Post</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Checkbox Post</shortDescription>
+        <value>post/mail</value>
+    </labels>
+    <labels>
+        <fullName>Checkbox_Telephone</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Checkbox Telephone</shortDescription>
+        <value>telephone</value>
+    </labels>
+    <labels>
+        <fullName>Click_to_Unsubscribe</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Click to Unsubscribe</shortDescription>
+        <value>We are very sorry to read that you do not want to receive any further news from HERMES PHARMA.</value>
+    </labels>
+    <labels>
+        <fullName>Comment</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Comment</shortDescription>
+        <value>Comment</value>
+    </labels>
+    <labels>
+        <fullName>Company</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Company</shortDescription>
+        <value>Company</value>
+    </labels>
+    <labels>
+        <fullName>Company_Page_Title</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Company Page Title</shortDescription>
+        <value>MARKET STUDY SUMMARY</value>
+    </labels>
+    <labels>
+        <fullName>Confirm_DOI</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Confirm DOI</shortDescription>
+        <value>CONFIRM SUBSCRIPTION</value>
+    </labels>
+    <labels>
+        <fullName>Confirm_Subscription_Email_And_Post</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Confirm Subscription Email And Post</shortDescription>
+        <value>You have been successfully subscribed to receive our news marketing materials from HERMES PHARMA through e-mail and post.</value>
+    </labels>
+    <labels>
+        <fullName>Confirm_Subscription_Email_And_Post_And_Tel</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Confirm Subscription Email And Post And Tel</shortDescription>
+        <value>You have been successfully subscribed to receive our news marketing materials from HERMES PHARMA through e-mail, telephone and post.</value>
+    </labels>
+    <labels>
+        <fullName>Confirm_Subscription_Email_And_Telephone</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Confirm Subscription Email And Telephone</shortDescription>
+        <value>You have been successfully subscribed to receive our news marketing materials from HERMES PHARMA through e-mail and telephone.</value>
+    </labels>
+    <labels>
+        <fullName>Confirm_Subscription_Email_Opt_In</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Confirm Subscription Email Opt In</shortDescription>
+        <value>You have been successfully subscribed to receive our news marketing materials from HERMES PHARMA through e-mail.</value>
+    </labels>
+    <labels>
+        <fullName>Confirmation_Section_Text_On_Manual_Opt_In</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Confirmation Section Text On Manual Opt In</shortDescription>
+        <value>Thank you for your interest in receiving our news and marketing materials. Please select your preferred communication option(s) to be contacted by HERMES PHARMA and finalize your subscription by clicking the button below.</value>
+    </labels>
+    <labels>
+        <fullName>Confirmation_doi_success</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Confirmation doi success</shortDescription>
+        <value>Your subscription on &lt;a href=&quot;{0}&quot;&gt; {1} &lt;/a&gt; to receive our news and marketing materials was successful. You can revoke your consent at any time with future effect by clicking the unsubscribe link in your confirmation e-mail.</value>
+    </labels>
+    <labels>
+        <fullName>Confirmation_doi_success_2</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Confirmation doi success 2</shortDescription>
+        <value>Alternatively, you can also send an e-mail to &lt;a href=&quot;{0}&quot;&gt; {1} &lt;/a&gt; or contact us via the contact details stated in our &lt;a href=&quot;{2}&quot;&gt;privacy policy.&lt;/a&gt;</value>
+    </labels>
+    <labels>
+        <fullName>Currently_Unsubscribed</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Currently Unsubscribed</shortDescription>
+        <value>Thank you for your interest in receiving our news and materials. Unfortunately, we could not proceed with your request. Could you please check the link below  and follow the instructions to subscribe to our newsletter?</value>
+    </labels>
+    <labels>
+        <fullName>Data_Protection_Email_Link</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Data Protection Email Link</shortDescription>
+        <value>mailto: dataprotection@hermes-pharma.com</value>
+    </labels>
+    <labels>
+        <fullName>Data_Protection_Email_Text</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Data Protection Email Text</shortDescription>
+        <value>dataprotection@hermes-pharma.com</value>
+    </labels>
+    <labels>
+        <fullName>Dear_Visitor</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Dear Visitor</shortDescription>
+        <value>Dear Visitor</value>
+    </labels>
+    <labels>
+        <fullName>Do_Not_Contact_Message_On_Manual_Opt_In_Confirmation_Page</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Do Not Contact Message On Manual Opt In Confirmation Page</shortDescription>
+        <value>Thank you for choosing your communication options. We are very sorry to read that you do not want to receive any news from HERMES PHARMA and respect your decision.</value>
+    </labels>
+    <labels>
+        <fullName>Do_Not_Want_To_Be_Contacted</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Do Not Want To Be Contacted</shortDescription>
+        <value>I do not want to be contacted</value>
+    </labels>
+    <labels>
+        <fullName>Doi_Confirmation_Page_Welcome_Message</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Doi Confirmation Page Welcome Message</shortDescription>
+        <value>Thank you for your interest in receiving our news and marketing materials. Please finalize your subscription by clicking the button below:</value>
+    </labels>
+    <labels>
+        <fullName>Doi_Confirmation_Page_Welcome_Message_2</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Doi Confirmation Page Welcome Message 2</shortDescription>
+        <value>All materials will be sent according to our &lt;a href=&quot;{0}&quot;&gt;privacy policy.&lt;/a&gt;</value>
+    </labels>
+    <labels>
+        <fullName>Doi_Confirmation_Page_Welcome_Message_Points</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Doi Confirmation Page Welcome Message Points</shortDescription>
+        <value>&lt;li&gt;by e-mail to &lt;a href=&quot;{0}&quot;&gt; {1} &lt;/a&gt; &lt;/li&gt; 
+&lt;li&gt;by contacting us via the contact details stated in our &lt;a href=&quot;{2}&quot;&gt;privacy policy.&lt;/a&gt;&lt;/li&gt;</value>
+    </labels>
+    <labels>
+        <fullName>Doi_Page_Thank_you</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Doi Page Thank you</shortDescription>
+        <value>Thank you,</value>
+    </labels>
+    <labels>
+        <fullName>Doi_Sender_Email_Address</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Doi Sender Email Address</shortDescription>
+        <value>info@hermes-pharma.com</value>
+    </labels>
+    <labels>
+        <fullName>Double_Opt_In</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Double Opt In</shortDescription>
+        <value>Double Opt In</value>
+    </labels>
+    <labels>
+        <fullName>Double_Opt_In_Url</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Double Opt In Url</shortDescription>
+        <value>http://hermesdoi-hermesdoi.cs89.force.com/DoiConfirmation</value>
+    </labels>
+    <labels>
+        <fullName>Duplicate_Email_Found</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Duplicate Email Found</shortDescription>
+        <value>Duplicate Email Found</value>
+    </labels>
+    <labels>
+        <fullName>Email</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Email</shortDescription>
+        <value>e-mail</value>
+    </labels>
+    <labels>
+        <fullName>Email_Address</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Email Address</shortDescription>
+        <value>E-mail address</value>
+    </labels>
+    <labels>
+        <fullName>Email_Address_is_Required</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Email Address is Required</shortDescription>
+        <value>E-mail address is required</value>
+    </labels>
+    <labels>
+        <fullName>Email_Field_is_blank</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Email Field is blank</shortDescription>
+        <value>E-mail field cannot be blank</value>
+    </labels>
+    <labels>
+        <fullName>Email_Opt_In</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Email Opt In</shortDescription>
+        <value>Email Opt In</value>
+    </labels>
+    <labels>
+        <fullName>Email_Opt_In_Checkbox_Id</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Email Opt In Checkbox Id</shortDescription>
+        <value>00N5800000CNDjc</value>
+    </labels>
+    <labels>
+        <fullName>Email_Opt_In_Checkbox_Message</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Email Opt In Checkbox Message</shortDescription>
+        <value>Yes, subscribe me to the blog</value>
+    </labels>
+    <labels>
+        <fullName>Email_Opt_In_Label_On_Resubscribe_Page</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Email Opt In Label On Resubscribe Page</shortDescription>
+        <value>I agree that HERMES PHARMA may contact me via e-mail with marketing materials, e.g. news on products and services, technologies, newly available APIs and dosage forms.</value>
+    </labels>
+    <labels>
+        <fullName>Email_Opt_In_Related_Text_on_Resubscribe_Page</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Email Opt In Related Text on Resubscribe Page</shortDescription>
+        <value>I can revoke my declaration to consent at any time with effect for the future by e-mail to &lt;a href=&quot;{0}&quot;&gt; {1} &lt;/a&gt; or by contacting HERMES PHARMA via the contact details stated in the &lt;a href=&quot;{2}&quot;&gt;privacy policy.&lt;/a&gt; &lt;br/&gt;&lt;br/&gt;The HERMES PHARMA privacy policy can be found on &lt;a href=&quot;{3}&quot;&gt;www.hermes-pharma.com/privacy-policy.html.&lt;/a&gt;</value>
+    </labels>
+    <labels>
+        <fullName>Email_Opt_Out</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Email Opt Out</shortDescription>
+        <value>Email Opt Out</value>
+    </labels>
+    <labels>
+        <fullName>Email_Template_For_Doi_Email_Contact</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Email Template For Doi Email Contact</shortDescription>
+        <value>Doi_Email_On_Contact</value>
+    </labels>
+    <labels>
+        <fullName>Email_Template_For_Doi_Email_Lead</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Email Template For Doi Email Lead</shortDescription>
+        <value>Doi_Email_On_Lead</value>
+    </labels>
+    <labels>
+        <fullName>Email_Template_For_ReSubscribe_Email_Contact</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Email Template For ReSubscribe Email Contact</shortDescription>
+        <value>ReSubscribe_Email_On_Contact</value>
+    </labels>
+    <labels>
+        <fullName>Email_Template_For_ReSubscribe_Email_Lead</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Email Template For ReSubscribe Email Lead</shortDescription>
+        <value>ReSubscribe_Email_On_Lead</value>
+    </labels>
+    <labels>
+        <fullName>Email_Template_For_Unsubscribe_Email_Contact</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Email Template For Unsubscribe Email Contact</shortDescription>
+        <value>Unsubscribe_Email_On_Contact</value>
+    </labels>
+    <labels>
+        <fullName>Email_Template_For_Unsubscribe_Email_Lead</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Email Template For Unsubscribe Email Lead</shortDescription>
+        <value>Unsubscribe_Email_On_Lead</value>
+    </labels>
+    <labels>
+        <fullName>Enter_Your_Email_Address</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Enter Your Email Address</shortDescription>
+        <value>Enter your e-mail address.</value>
+    </labels>
+    <labels>
+        <fullName>Failure_In_Email_Sending</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Failure In Email Sending</shortDescription>
+        <value>Email not Sent</value>
+    </labels>
+    <labels>
+        <fullName>First_Name</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>First Name</shortDescription>
+        <value>First Name</value>
+    </labels>
+    <labels>
+        <fullName>Footer_Copyright_Text_Of_Company_Website</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Footer Copyright Text Of Company Website</shortDescription>
+        <value>Copyright © Hermes Arzneimittel GmbH Division HERMES PHARMA | 2018 | All rights reserved</value>
+    </labels>
+    <labels>
+        <fullName>Footer_Info_Text</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Footer Info Text</shortDescription>
+        <value>Georg-Kalb-Str. 5-8 | 82049 Pullach | Germany | www.hermes-pharma.com |
+Phone: +49 89 79102-261 | info@hermes-pharma.com</value>
+    </labels>
+    <labels>
+        <fullName>General_Opt_Out_Confirmation_Message</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>General Opt Out Confirmation Message</shortDescription>
+        <value>You have been successfully unsubscribed and will no longer receive any news from HERMES PHARMA.</value>
+    </labels>
+    <labels>
+        <fullName>Go_To_Home_Page</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Go To Home Page</shortDescription>
+        <value>Contact Us</value>
+    </labels>
+    <labels>
+        <fullName>Hermes_Pharma</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Hermes Pharma</shortDescription>
+        <value>HERMES PHARMA</value>
+    </labels>
+    <labels>
+        <fullName>Hermes_Pharma_Contact_Us</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Hermes Pharma Contact Us</shortDescription>
+        <value>http://www.hermes-pharma.com/about-us/contact-us.html</value>
+    </labels>
+    <labels>
+        <fullName>Hermes_Pharma_Contact_Us_Headquater</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Hermes Pharma Contact Us Headquater</shortDescription>
+        <value>https://www.hermes-pharma.com/about-us/contact-us/headquarter-munich.html</value>
+    </labels>
+    <labels>
+        <fullName>Hermes_Pharma_Home_Page</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Hermes Pharma Home Page</shortDescription>
+        <value>http://www.hermes-pharma.com/</value>
+    </labels>
+    <labels>
+        <fullName>Hermes_Pharma_Sitemap</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Hermes Pharma Sitemap</shortDescription>
+        <value>https://www.hermes-pharma.com/sitemap.html</value>
+    </labels>
+    <labels>
+        <fullName>Hermes_Pharma_TermsOfUse</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Hermes Pharma TermsOfUse</shortDescription>
+        <value>https://www.hermes-pharma.com/terms-of-use.html</value>
+    </labels>
+    <labels>
+        <fullName>HomePage</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>HomePage</shortDescription>
+        <value>Homepage</value>
+    </labels>
+    <labels>
+        <fullName>HpProductDoiConfirmation_Page_Url</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>HpProductDoiConfirmation Page Url</shortDescription>
+        <value>http://hermesdoi-hermesdoi.cs89.force.com/HpProductDoiConfirmation</value>
+    </labels>
+    <labels>
+        <fullName>HpProductReSubscribeEmail_Page_Url</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>HpProductReSubscribeEmail Page Url</shortDescription>
+        <value>http://hermesdoi-hermesdoi.cs89.force.com/HpProductReSubscribeEmail</value>
+    </labels>
+    <labels>
+        <fullName>HpProductUnsubscribeEmail_Page_Url</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>HpProductUnsubscribeEmail Page Url</shortDescription>
+        <value>http://hermesdoi-hermesdoi.cs89.force.com/HpProductUnsubscribeEmail</value>
+    </labels>
+    <labels>
+        <fullName>If_you_would_like_to_re_subscribe_please_click_the_link_below</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>If you would like to re-subscribe please click the link below</shortDescription>
+        <value>If you would like to re-subscribe, please click the link below:</value>
+    </labels>
+    <labels>
+        <fullName>Imprint</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Imprint</shortDescription>
+        <value>IMPRINT</value>
+    </labels>
+    <labels>
+        <fullName>Imprint_Link_Hermes_Pharma</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Imprint Link Hermes Pharma</shortDescription>
+        <value>http://www.hermes-pharma.com/imprint.html</value>
+    </labels>
+    <labels>
+        <fullName>Imprint_Link_Market_Study</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Imprint Link Market Study</shortDescription>
+        <value>http://www.swallowingtablets.com/imprint.html</value>
+    </labels>
+    <labels>
+        <fullName>LastName_Filter_Test</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>LastName Filter Test</shortDescription>
+        <value>Test CCG</value>
+    </labels>
+    <labels>
+        <fullName>Last_Name</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Last Name</shortDescription>
+        <value>Last Name</value>
+    </labels>
+    <labels>
+        <fullName>Lead_Source_Hermes_Pharma_Product_Portfolio</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Lead Source 	Hermes Pharma Product Portfolio</shortDescription>
+        <value>Hermes Pharma Product Portfolio</value>
+    </labels>
+    <labels>
+        <fullName>Lead_Source_Hermes_Pharma_Website</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Lead Source Hermes Pharma Website</shortDescription>
+        <value>Hermes Pharma Website</value>
+    </labels>
+    <labels>
+        <fullName>Lead_Source_Market_Study</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Lead Source Market Study</shortDescription>
+        <value>Market Study</value>
+    </labels>
+    <labels>
+        <fullName>Manual_Opt_In_Confirmation_Link</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Manual Opt In Confirmation Link</shortDescription>
+        <value>https://hermesdoi-hermesdoi.cs89.force.com/ManualOptInConfirmationPage</value>
+    </labels>
+    <labels>
+        <fullName>Message_When_Record_Not_Found_On_Resubscription_Page</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Message When Record Not Found On Resubscription Page</shortDescription>
+        <value>&lt;p&gt;Thank you for your interest in receiving our news and marketing materials. Please go to our &lt;a href=&quot;{0}&quot;&gt; {1} &lt;/a&gt; to select your contact preferences.&lt;/p&gt;</value>
+    </labels>
+    <labels>
+        <fullName>Organization_Id</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Organization Id</shortDescription>
+        <value>00D0E0000000vcH</value>
+    </labels>
+    <labels>
+        <fullName>Permission_Required_To_Update</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Permission Required To Update</shortDescription>
+        <value>Permission Required To Update !!</value>
+    </labels>
+    <labels>
+        <fullName>Please_check_your_email_to_confirm_your_DOI</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Please check your email to confirm your DOI.</shortDescription>
+        <value>Please check your e-mail to confirm your subscription.</value>
+    </labels>
+    <labels>
+        <fullName>Please_check_your_email_to_confirm_your_subscription</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Please check your email to confirm your subscription</shortDescription>
+        <value>Please check your e-mail to confirm your subscription.</value>
+    </labels>
+    <labels>
+        <fullName>Please_check_your_email_to_re_subscribe_newsletter</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Please check your email to re-subscribe newsletter</shortDescription>
+        <value>Please check your email to re-subscribe newsletter</value>
+    </labels>
+    <labels>
+        <fullName>Please_check_your_email_to_unsubscribe</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Please check your email to unsubscribe</shortDescription>
+        <value>Please check your email to unsubscribe</value>
+    </labels>
+    <labels>
+        <fullName>Please_click_here_to_subscribe</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Please click here to subscribe</shortDescription>
+        <value>Please click here to subscribe:</value>
+    </labels>
+    <labels>
+        <fullName>Please_verify_your_email_address_to_confirm_your_DOI</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Please verify your email address to confirm your DOI</shortDescription>
+        <value>Thank you for your interest in receiving our news and marketing materials. Unfortunately, we could not proceed with your request. Could you please verify your e-mail address in order to move forward with your subscription?</value>
+    </labels>
+    <labels>
+        <fullName>Please_verify_your_email_address_to_re_subscribe</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Please verify your email address to re-subscribe</shortDescription>
+        <value>Thank you for your interest in receiving our news and marketing materials. Please verify your e-mail address in order to move forward with your subscription and select your options to be contacted by HERMES PHARMA.</value>
+    </labels>
+    <labels>
+        <fullName>Please_verify_your_email_address_to_unsubscribe</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Please verify your email address to unsubscribe</shortDescription>
+        <value>Unfortunately, we could not proceed with your request. Could you please verify your e-mail address so we can remove you from our distribution list?</value>
+    </labels>
+    <labels>
+        <fullName>Postal_Opt_Out</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Postal Opt Out</shortDescription>
+        <value>Postal Opt Out</value>
+    </labels>
+    <labels>
+        <fullName>Privacy_Policy</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Privacy Policy</shortDescription>
+        <value>PRIVACY POLICY</value>
+    </labels>
+    <labels>
+        <fullName>Privacy_Policy_Link_Hermes_Pharma</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Privacy Policy Link Hermes Pharma</shortDescription>
+        <value>http://www.hermes-pharma.com/privacy-policy.html</value>
+    </labels>
+    <labels>
+        <fullName>Privacy_Policy_Link_Market_Study</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Privacy Policy Link Market Study</shortDescription>
+        <value>http:/www.swallowingtablets.com/privacy-policy.html</value>
+    </labels>
+    <labels>
+        <fullName>ReSubscribe_Email_Url</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ReSubscribe Email Url</shortDescription>
+        <value>http://hermesdoi-hermesdoi.cs89.force.com/ReSubscribeEmail</value>
+    </labels>
+    <labels>
+        <fullName>Re_Subscribe</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Re-Subscribe</shortDescription>
+        <value>Re-Subscribe</value>
+    </labels>
+    <labels>
+        <fullName>Record_Not_Updated</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Record Not Updated</shortDescription>
+        <value>Record Not Updated</value>
+    </labels>
+    <labels>
+        <fullName>Required_Lead_Source</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Required Lead Source</shortDescription>
+        <value>Hermes Pharma Website</value>
+    </labels>
+    <labels>
+        <fullName>Resubscribe_Checkbox_Error_Message</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Resubscribe_Checkbox_Error_Message</shortDescription>
+        <value>This field is required. Please select anyone of them.</value>
+    </labels>
+    <labels>
+        <fullName>Sallowing_Tablets_Home</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Sallowing Tablets Home</shortDescription>
+        <value>http://www.swallowingtablets.com/</value>
+    </labels>
+    <labels>
+        <fullName>Submit</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Submit</shortDescription>
+        <value>Submit</value>
+    </labels>
+    <labels>
+        <fullName>Subscribe_Confirmation_Success</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Subscribe Confirmation Success</shortDescription>
+        <value>You have been successfully subscribed to receive our news marketing materials from HERMES PHARMA through telephone and post.</value>
+    </labels>
+    <labels>
+        <fullName>Subscribe_Confirmation_Success_Email_Opt_In</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Subscribe Confirmation Success Email Opt In</shortDescription>
+        <value>Thank you for your interest in receiving our news and marketing materials. In order to avoid misuse, you will receive an e-mail to confirm your e-mail address. Please click on the confirmation link in this e-mail to receive our news and marketing materials.</value>
+    </labels>
+    <labels>
+        <fullName>Subscribe_Confirmation_Success_Postal_OptIn</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Subscribe Confirmation Success Postal OptIn</shortDescription>
+        <value>You have been successfully subscribed to receive our news marketing materials from HERMES PHARMA through post.</value>
+    </labels>
+    <labels>
+        <fullName>Subscribe_Confirmation_Success_Tel</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Subscribe Confirmation Success Telehone Opt In</shortDescription>
+        <value>You have been successfully subscribed to receive our news marketing materials from HERMES PHARMA through telephone.</value>
+    </labels>
+    <labels>
+        <fullName>Subscriber_Record_Not_Found</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Subscriber Record Not Found</shortDescription>
+        <value>Subscriber&apos;s record not found</value>
+    </labels>
+    <labels>
+        <fullName>Tel_Opt_Out</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Tel Opt Out</shortDescription>
+        <value>Tel Opt Out</value>
+    </labels>
+    <labels>
+        <fullName>Thank_You_Confirm_Subscription</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Thank You Confirm Subscription</shortDescription>
+        <value>&lt;p&gt;Thank you for your interest in receiving our news and marketing materials. You are unsubscribed from all communication from HERMES PHARMA. Please go to our &lt;a href=&quot;{0}&quot;&gt; {1} &lt;/a&gt; to select your contact preferences.&lt;/p&gt;</value>
+    </labels>
+    <labels>
+        <fullName>This_field_is_required</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>This field is required</shortDescription>
+        <value>This field is required</value>
+    </labels>
+    <labels>
+        <fullName>Unsubscribe</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Unsubscribe</shortDescription>
+        <value>Unsubscribe</value>
+    </labels>
+    <labels>
+        <fullName>Unsubscribe_Checkbox_Error_Message</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Unsubscribe Checkbox Error Message</shortDescription>
+        <value>This field is required</value>
+    </labels>
+    <labels>
+        <fullName>Unsubscribe_Checkbox_Label</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Unsubscribe Checkbox Label</shortDescription>
+        <value>Please tick the boxes that apply: 
+&lt;br/&gt;&lt;br/&gt;
+&lt;span class=&quot;{0}&quot;&gt;*&lt;/span&gt;I do not want to receive any news and marketing information sent to me via</value>
+    </labels>
+    <labels>
+        <fullName>Unsubscribe_Confirmation</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Unsubscribe Confirmation</shortDescription>
+        <value>You have been successfully unsubscribed and will no longer receive any news from HERMES PHARMA.</value>
+    </labels>
+    <labels>
+        <fullName>Unsubscribe_Email_Url</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Unsubscribe Email Url</shortDescription>
+        <value>http://hermesdoi-hermesdoi.cs89.force.com/UnsubscribeEmail</value>
+    </labels>
+    <labels>
+        <fullName>Unsubscribe_Message_Email_And_Postal_Opt_Out</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Unsubscribe Message Email And Postal Opt Out</shortDescription>
+        <value>You have been successfully unsubscribed and will no longer receive any news from HERMES PHARMA through e-mail and post.</value>
+    </labels>
+    <labels>
+        <fullName>Unsubscribe_Message_Email_And_Tel_Opt_Out</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Unsubscribe Message Email And Tel Opt Out</shortDescription>
+        <value>You have been successfully unsubscribed and will no longer receive any news from HERMES PHARMA through e-mail and telephone.</value>
+    </labels>
+    <labels>
+        <fullName>Unsubscribe_Message_Email_Opt_Out</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Unsubscribe Message Email Opt Out</shortDescription>
+        <value>You have been successfully unsubscribed and will no longer receive any news from HERMES PHARMA through e-mail.</value>
+    </labels>
+    <labels>
+        <fullName>Unsubscribe_Message_Opt_Out_Email_Telephone</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Unsubscribe Message Opt Out Email+Telephone</shortDescription>
+        <value>now, we have a general OptOut.</value>
+    </labels>
+    <labels>
+        <fullName>Unsubscribe_Message_Postal_Opt_Out</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Unsubscribe Message Postal Opt Out</shortDescription>
+        <value>You have been successfully unsubscribed and will no longer receive any news from HERMES PHARMA through post.</value>
+    </labels>
+    <labels>
+        <fullName>Unsubscribe_Message_Telephone_And_Postal_Opt_Out</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Unsubscribe Message Telephone And Postal Opt Out</shortDescription>
+        <value>You have been successfully unsubscribed and will no longer receive any news from HERMES PHARMA through telephone and post.</value>
+    </labels>
+    <labels>
+        <fullName>Unsubscribe_Message_Telephone_Opt_Out</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Unsubscribe Message Telephone Opt Out</shortDescription>
+        <value>You have been successfully unsubscribed and will no longer receive any news from HERMES PHARMA through telephone.</value>
+    </labels>
+    <labels>
+        <fullName>Web_To_Lead_Action_Link</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Web To Lead Action Link</shortDescription>
+        <value>https://test.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8</value>
+    </labels>
+    <labels>
+        <fullName>Web_To_Lead_Form</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Web To Lead Form</shortDescription>
+        <value>http://hermesdoi-hermesdoi.cs89.force.com/WebToLeadForm</value>
+    </labels>
+    <labels>
+        <fullName>Website_Home_Page</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Website Home Page</shortDescription>
+        <value>http://www.hermes-pharma.com/about-us/contact-us.html</value>
+    </labels>
+    <labels>
+        <fullName>Website_Home_Page_Link</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Website Home Page Link</shortDescription>
+        <value>http://www.hermes-pharma.com/</value>
+    </labels>
+    <labels>
+        <fullName>You_are_not_subscribed_to_our_E_Mail_newsletter</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>You are not subscribed to our E-Mail newsletter</shortDescription>
+        <value>You are not subscribed to our E-Mail newsletter</value>
+    </labels>
+    <labels>
+        <fullName>Your_Form_is_Submitted_Successfully</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Your Form is Submitted Successfully</shortDescription>
+        <value>Your Form is Submitted Successfully</value>
+    </labels>
+    <labels>
+        <fullName>already_confirmed_doi</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>already confirmed doi</shortDescription>
+        <value>You have already confirmed your subscription.</value>
+    </labels>
+    <labels>
+        <fullName>thank_you</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>thank you</shortDescription>
+        <value>THANK YOU!</value>
+    </labels>
+</CustomLabels>

@@ -1,0 +1,429 @@
+<apex:page showHeader="false" standardStylesheets="false" sidebar="false" cache="false" controller="UnsubscribeEmailCtlr">
+    <apex:stylesheet value="{!$Resource.ProductPortfolioDoiStylesheet}"/>
+    <apex:stylesheet value="{!$Resource.HermesPharmaPageStylesheet}"/>
+    <apex:includeScript value="{!$Resource.jQuery}"/>
+    <apex:slds />
+    <link href="https://fonts.googleapis.com/css?family=Shadows+Into+Light" rel="stylesheet"/>
+    <style>
+       .slds-scope .addressHowToFind:before{
+            background-image: url({!$Resource.HermesOrangeArrow});
+        }
+        .slds-scope .confirmationSectionButton, .submitButtonGreen{
+            background: #008243;
+        }
+        .slds-scope a.medium-button-green{
+        	background: #008243;
+        }
+        @font-face {
+        	font-family: frutiger-lts-light;
+        	src: url({!$Resource.HermesPharmaFrutigerFontOtf}), url({!$Resource.HermesPharmaFrutigerFontWoff});
+        }
+    </style>
+    
+    <div class="pageBody">
+        <!--Page Header-->
+        <div class="pageHeaderSection">
+            <div class="pageHeaderContainer">
+                <div class="pageHeaderLogo">
+                    <a href="{!$Label.Hermes_Pharma_Home_Page}">
+                        <img src="{!$Resource.CompanyLogo1}"/>
+                    </a>
+                </div>
+                <div>
+                    
+                </div>
+            </div>
+        </div>
+        <!--/Page Header-->
+        
+        <div class="pageContentContainer">
+            <!--Front Img Section-->
+            <div class="frontImageSection">
+                <div class="frontImgInnerDiv">
+                    <div class="frontImgInnerDivGrid">
+                        <div class="contactImgContainer">
+                            <img src="{!$Resource.HermesPharmaContactImage}"/>
+                            <div class="contactImgDetail">
+                                <div class="contactImgDetailPosition">
+                                    <p class="contactImgDetailText">
+                                        Would you like to get in touch? Call us: 
+                                        <a style="color: #ffffff;" href="tel:49-89-79102-261">+49 89 79102 261</a>
+                                        <!-- or use the contact form below-->
+                                    </p>   
+                                </div>    
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--/Front Img Section-->
+            
+            <div class="contentHeadSection">
+                <div class="contentHead">
+                </div> 
+            </div> 
+            
+            <!--Page Content Section-->
+            <div>
+                <div class="slds-grid slds-wrap pageContentSection">
+                    <div class="doiContainer">
+                        <!--Page Body Section-->
+                        <div lang="en" class="doiContent">
+                            <!--Unsubscribe Button Section-->
+                            <div id="unsubscribeButtonSection" class="slds-hide">
+                                <div class="confirmationSection">
+                                    <p> {!salutation},</p>
+                                    <br/>
+                                    <p>{!$Label.Click_to_Unsubscribe}</p>
+                                    
+                                    <fieldset class="slds-form-element" id="unsubscribeForm">
+                                        <label class="fillRequiredColor">
+                                            <abbr class="slds-required" title="required">*</abbr>
+                                            <apex:outputText value="{!$Label.Unsubscribe_Checkbox_Label}" escape="false">
+                                                <apex:param value="errorMessageColor"/>
+                                            </apex:outputText>
+                                        </label>
+                                        <div class="slds-form-element__control checkboxArea">
+                                            <span class="slds-checkbox checkboxMargin">
+                                                <input type="checkbox" name="UnsubOptions" id="emailOption1" value="on" />
+                                                <label class="slds-checkbox__label" for="emailOption1">
+                                                    <span class="slds-checkbox_faux"></span>
+                                                    <span class="slds-form-element__label fillRequiredColor">{!$Label.Checkbox_Email}
+                                                        <span class="errorMessageColor">*</span></span>
+                                                </label>
+                                            </span>
+                                            <span class="slds-checkbox checkboxMargin">
+                                                <input type="checkbox" name="UnsubOptions" id="telephoneOption2" value="on" />
+                                                <label class="slds-checkbox__label" for="telephoneOption2">
+                                                    <span class="slds-checkbox_faux"></span>
+                                                    <span class="slds-form-element__label fillRequiredColor">{!$Label.Checkbox_Telephone}
+                                                        <span class="errorMessageColor">*</span></span>
+                                                </label>
+                                            </span>
+                                            <span class="slds-checkbox">
+                                                <input type="checkbox" name="UnsubOptions" id="postOption3" value="on" />
+                                                <label class="slds-checkbox__label" for="postOption3">
+                                                    <span class="slds-checkbox_faux"></span>
+                                                    <span class="slds-form-element__label fillRequiredColor">{!$Label.Checkbox_Post}
+                                                        <span class="errorMessageColor">*</span></span>
+                                                </label>
+                                            </span>
+                                        </div>
+                                        <div id="checkboxGroupErrorMsg" class="slds-form-element__help slds-hide">{!$Label.Unsubscribe_Checkbox_Error_Message}</div>
+                                    </fieldset>    
+                                    
+                                    <a href="JavaScript:Void(0);" id="unsubscribeButton" onclick="clickUnsubscribe()"
+                                       class="confirmationSectionButton">
+                                        {!$Label.Unsubscribe}
+                                    </a>
+                                    
+                                    <p>{!$Label.Doi_Page_Thank_you}</p>
+                                    <br/>
+                                    <p>
+                                        {!$Label.Hermes_Pharma} – <br/>
+                                        {!$Label.A_Division_of_HERMES_Arzneimittel_GmbH}
+                                    </p>
+                                </div>
+                            </div>
+                            <!--/Unsubscribe Button Section-->
+                            
+                            <!--Unsubscribed Section, it display after Unsubscription-->
+                            <div id="unsubscribedSection" class="slds-hide">
+                                <div class="allSectionsBody">
+                                    <h1 id="unsubscribedSectionBody">
+                                        <p> {!salutation},</p>
+                                        <br/>
+                                        <p id="unsubscribedSectionMessage"> 
+                                            {!$Label.Unsubscribe_Confirmation} 
+                                        </p>
+                                        <br/>
+                                    </h1>
+                                    <br/><br/>
+                                    
+                                    <p>{!$Label.Doi_Page_Thank_you}</p>
+                                    <br/>
+                                    <p>
+                                        {!$Label.Hermes_Pharma} – <br/>
+                                        {!$Label.A_Division_of_HERMES_Arzneimittel_GmbH}
+                                    </p>
+                                </div> 
+                            </div>
+                            <!--/Unsubscribed Section, it display after Unsubscription-->
+                            
+                            <!--Record Not Found Section-->
+                            <div id="recordNotFoundSection" class="slds-hide">
+                                <div class="confirmationSection">
+                                    <p>{!$Label.Dear_Visitor},</p>
+                                    <br/>                                  
+                                    <p>{!$Label.Please_verify_your_email_address_to_unsubscribe}</p>
+                                    <center>
+                                        <form id="myForm">
+                                            <div class="slds-form-element" id="inputEmailContainer">
+                                                <label class="slds-form-element__label fillRequiredColor" for="inputEmail" style="float:left;">
+                                                    <abbr class="slds-required" title="required">*</abbr> {!$Label.Email_Address}</label>
+                                                <div class="slds-form-element__control">
+                                                    <input type="email" required="" aria-describedby="error-message" id="inputEmail" class="slds-input" 
+                                                           placeholder="{!$Label.Enter_Your_Email_Address}"/>
+                                                </div>
+                                                <div id="error-message" class="slds-form-element__help slds-hide">{!$Label.Email_Address_is_Required}</div>
+                                            </div>                                             
+                                            <input type="submit" id="confirmDoiButton" class="submitButtonGreen" value="{!$Label.Unsubscribe}"/>
+                                            <br/>
+                                            <h1 class="allSectionsBodyText errorMessageColor" id="invalidEmail"></h1>
+                                        </form>
+                                    </center>
+                                    
+                                    <br/>
+                                    <p>{!$Label.Doi_Page_Thank_you}</p>
+                                    <br/>
+                                    <p>
+                                        {!$Label.Hermes_Pharma} – <br/>
+                                        {!$Label.A_Division_of_HERMES_Arzneimittel_GmbH}
+                                    </p>
+                                </div>
+                            </div>
+                            <!--/Record Not Found Section-->
+                        </div>
+                        <!--/Page Body Section--> 
+                    </div>
+                    
+                    <!--Address Section-->
+                    <div class="addressSectionContainer">
+                        <div class="addressSection">     
+                            <div class="addressSectionArea">
+                                <div class="addressSectionInnerArea">
+                                    <h1 class="pageSideHeadings">Our headquarters in Pullach</h1>
+                                    <p class="bodytext">HERMES ARZNEIMITTEL GmbH<br/>
+                                        Division HERMES PHARMA<br/>
+                                        Georg-Kalb-Strasse 5-8<br/><br/>
+                                        82049 Pullach <br/>Germany<br/><br/>
+                                        Phone +49 89 79102 261<br/>
+                                        Fax +49 89 79102 159 <br/>
+                                        <a style="color:#ff9933;" href="{!$Label.Hermes_Pharma_Contact_Us_Headquater}" title="Directions to HERMES PHARMA in Germany">
+                                            <span class="addressHowToFind">How to find uS</span>
+                                        </a>
+                                    </p>    
+                                </div>    
+                            </div>
+                        </div>
+                    </div>
+                    <!--/Address Section-->
+                </div>
+            </div>
+            <!--/Page Content Section-->
+            
+        </div>
+        
+        <!--Footer Section-->
+        <div class="pageFooter">
+            <div class="footer-wrapper">
+                <div class="slds-grid slds-wrap">
+                    <div class="slds-size_1-of-2 imprintFooterAlign">
+                        <a style="color: #ffffff;" href="{!$Label.Imprint_Link_Hermes_Pharma}" 
+                           title="Imprint">
+                            {!$Label.Imprint}
+                        </a>    
+                    </div>
+                    <div class="slds-size_1-of-2 PrivacyFooterAlign">
+                        <a style="color: #ffffff;" href="{!$Label.Privacy_Policy_Link_Hermes_Pharma}" 
+                           title="Privacy Policy">
+                            {!$Label.Privacy_Policy}
+                        </a>    
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--Footer Section-->
+        
+    </div>
+
+ <script>  
+       
+    $(document).ready(function() {
+        var userName = '{!userName}';         
+        var leadSource = '{!leadSource}';
+        
+        if({!postalOptIn} == false){
+            $("#postOption3").attr("disabled", true);    
+        }
+        if({!telephoneOptIn} == false){
+            $("#telephoneOption2").attr("disabled", true);    
+        }
+         if({!emailOptIn} == false){
+            $("#emailOption1").attr("disabled", true);    
+        }
+        
+        var isUnsubscribed = {!isUnsubscribed}; 
+        if(userName != ''){                     
+            if(isUnsubscribed == true){
+                $('#unsubscribeButtonSection').addClass("slds-hide");
+                $('#unsubscribedSection').removeClass("slds-hide");
+                $('#unsubscribedSectionMessage').html("{!$Label.Already_Unsubscribed}");
+            }
+            else{
+                $('#unsubscribeButtonSection').removeClass("slds-hide"); 
+            }
+        }
+        else{
+            $('#recordNotFoundSection').removeClass("slds-hide");
+        } 
+        $("#inputEmail").keyup(function(){
+                    $('#inputEmailContainer').removeClass('slds-has-error');
+                    $('#error-message').addClass("slds-hide");
+                    $('#invalidEmail').addClass("slds-hide");
+        }); 
+        $('#myForm').submit(function(ev){
+            var emailId = $('#inputEmail').val();
+            if(emailId != ''){                       
+                Visualforce.remoting.Manager.invokeAction(
+                    '{!$RemoteAction.UnsubscribeEmailCtlr.verifyEmailForUnsubscribe}',
+                    emailId,
+                    function(result, event){
+                        if (event.status){
+                            if(result == 0){
+                                $('#recordNotFoundSection').addClass("slds-hide");
+                                $('#unsubscribedSection').removeClass("slds-hide");
+                                $('#unsubscribedSectionBody').html("<p>{!$Label.Dear_Visitor},<p/><br/>"
+                                                                   +"{!$Label.Please_check_your_email_to_unsubscribe}");
+                            }
+                            else if(result == 4){
+                                $('#recordNotFoundSection').addClass("slds-hide");
+                                $('#unsubscribedSection').removeClass("slds-hide");
+                                $('#unsubscribedSectionBody').html("<p>{!$Label.Dear_Visitor},<p/><br/>"+
+                                                                   "{!$Label.Failure_In_Email_Sending}");
+                            }
+                                else if(result == 1){
+                                    $('#inputEmailContainer').addClass('slds-has-error');
+                                    $('#error-message').removeClass("slds-hide");
+                                    $('#error-message').html("{!$Label.You_are_not_subscribed_to_our_E_Mail_newsletter}"
+                                                                 +"<br/><span style='color:black;'>{!$Label.Please_click_here_to_subscribe}</span>"
+                                                                 +"<span class='linksOnPage'>"
+                                                                 +"<a href='{!$Label.Hermes_Pharma_Contact_Us}'>"
+                                                                 +"Contact Us</a></span>"); 
+                                }
+                                    else if(result == 2){
+                                        $('#inputEmailContainer').addClass('slds-has-error');
+                                        $('#error-message').removeClass("slds-hide");
+                                        $('#error-message').html("{!$Label.Duplicate_Email_Found}");
+                                    }
+                                        else if(result == 3){
+                                            $('#recordNotFoundSection').addClass("slds-hide");
+                                            $('#unsubscribedSection').removeClass("slds-hide");
+                                            $('#unsubscribedSectionBody').html("<p>{!$Label.Dear_Visitor},<p/><br/>"
+                                                                               +"{!$Label.Already_Unsubscribed}");
+                                        }
+                                            else if(result == 5){
+                                                $('#inputEmailContainer').addClass('slds-has-error');
+                                                $('#error-message').removeClass("slds-hide");
+                                                $('#error-message').html("{!$Label.Email_Field_is_blank}");
+                                            }
+                        }
+                    },
+                    {escape: true}
+                );       
+            }
+            else{
+                $('#inputEmailContainer').addClass('slds-has-error');
+                $('#error-message').removeClass("slds-hide");
+                $('#error-message').html("{!$Label.Email_Address_is_Required}");
+            }
+            ev.preventDefault();
+        });
+        
+        //for unsubscribeForm checkboxes.
+        $('input[name="UnsubOptions"]').click(function() {
+            if ($('input[name="UnsubOptions"]:checked').length == 1) {
+                $('#unsubscribeForm').removeClass('slds-has-error');
+                $('#checkboxGroupErrorMsg').addClass('slds-hide');    
+            }
+        });
+    });
+    
+    //When User clicks on Unsubscribe this function will be called.
+    function clickUnsubscribe(){ 
+        if(!$('input[name="UnsubOptions"]:checked').length > 0){
+            $('#unsubscribeForm').addClass('slds-has-error');
+            $('#checkboxGroupErrorMsg').removeClass('slds-hide');
+        }
+        else{
+            var unsubscribeValues = {
+                "recordId"          : '{!recordId}',
+                "currentPageName"   : '{!currentPageName}',
+                "ipAddress"         : '{!ipAddress}',
+                "emailOption"       : $('#emailOption1').is(':checked'),
+                "telephoneOption"   : $('#telephoneOption2').is(':checked'),
+                "postOption"        : $('#postOption3').is(':checked')
+            };
+            
+            Visualforce.remoting.Manager.invokeAction(
+                '{!$RemoteAction.UnsubscribeEmailCtlr.unsubscribeEmail}',
+                JSON.stringify(unsubscribeValues),
+                function(result, event){
+                    if (event.status) {
+                        if(result == 0){
+                            $('#unsubscribeButtonSection').addClass("slds-hide");
+                            $('#unsubscribedSection').removeClass("slds-hide");
+                        }
+                        else if(result == 3){
+                            $('#unsubscribeButtonSection').addClass("slds-hide");
+                            $('#unsubscribedSection').removeClass("slds-hide");
+                            $('#unsubscribedSectionMessage').html("{!$Label.Already_Unsubscribed}");
+                        }
+                            else if(result == 4){
+                                $('#unsubscribeButtonSection').addClass("slds-hide");
+                                $('#unsubscribedSection').removeClass("slds-hide");
+                                $('#unsubscribedSectionBody').html("{!$Label.Permission_Required_To_Update}");
+                            }
+                                else if(result == 2){
+                                    $('#unsubscribeButtonSection').addClass("slds-hide");
+                                    $('#unsubscribedSection').removeClass("slds-hide");
+                                    $('#unsubscribedSectionBody').html("{!$Label.Duplicate_Email_Found}");
+                                }
+                                    else if(result == 1){
+                                        $('#unsubscribeButtonSection').addClass("slds-hide");
+                                        $('#recordNotFoundSection').removeClass("slds-hide");
+                                    }
+                                        else if(result == 5){
+                                            $('#unsubscribeButtonSection').addClass("slds-hide");
+                                            $('#unsubscribedSection').removeClass("slds-hide");
+                                            $('#unsubscribedSectionBody').html("{!$Label.Record_Not_Updated}");    
+                                        }
+                                            else if(result == 6){
+                                                $('#unsubscribeButtonSection').addClass("slds-hide");
+                                                $('#unsubscribedSection').removeClass("slds-hide");
+                                                $('#unsubscribedSectionMessage').html("{!$Label.Unsubscribe_Message_Telephone_And_Postal_Opt_Out}");   
+                                            }
+                                                else if(result == 7){
+                                                    $('#unsubscribeButtonSection').addClass("slds-hide");
+                                                    $('#unsubscribedSection').removeClass("slds-hide");
+                                                    $('#unsubscribedSectionMessage').html("{!$Label.Unsubscribe_Message_Telephone_Opt_Out}");    
+                                                }
+                                                    else if(result == 8){
+                                                        $('#unsubscribeButtonSection').addClass("slds-hide");
+                                                        $('#unsubscribedSection').removeClass("slds-hide");
+                                                        $('#unsubscribedSectionMessage').html("{!$Label.Unsubscribe_Message_Postal_Opt_Out}");    
+                                                    }
+                                                        else if(result == 9){
+                                                            $('#unsubscribeButtonSection').addClass("slds-hide");
+                                                            $('#unsubscribedSection').removeClass("slds-hide");
+                                                            $('#unsubscribedSectionMessage').html("{!$Label.Unsubscribe_Message_Email_And_Tel_Opt_Out}");
+                                                        }
+                                                            else if(result == 10){
+                                                                $('#unsubscribeButtonSection').addClass("slds-hide");
+                                                                $('#unsubscribedSection').removeClass("slds-hide");
+                                                                $('#unsubscribedSectionMessage').html("{!$Label.Unsubscribe_Message_Email_And_Postal_Opt_Out}");
+                                                            }
+                                                                    else if(result == 11){
+                                                                        $('#unsubscribeButtonSection').addClass("slds-hide");
+                                                                        $('#unsubscribedSection').removeClass("slds-hide");
+                                                                        $('#unsubscribedSectionMessage').html("{!$Label.Unsubscribe_Message_Email_Opt_Out}");
+                                                                    }
+  
+                    }
+                },
+                {escape: true}
+            );
+        }
+    }
+    </script>
+</apex:page>

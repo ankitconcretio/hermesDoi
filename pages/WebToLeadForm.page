@@ -1,0 +1,271 @@
+<!--
+@purpose: This page used to create lead (contains web to lead form).
+@author:  Cloud Consulting Group GmbH
+@email:   support@cloudconsulting24.com
+
+@history:
+version                   | author                       | changes
+====================================================================================
+1.0 (11-04-2018)          | Cloud Consulting Group GmbH  | initial version
+-->
+
+<apex:page showHeader="false" standardStylesheets="false" sidebar="false" cache="false">
+    <apex:stylesheet value="{!$Resource.DOIStylesheet}"/>
+    <apex:slds />    
+    <style>
+			*{
+				box-sizing: border-box;
+			}
+			body{
+				width: 1170px !important;
+    			float: none !important;
+    			margin: 0 auto !important;
+    			padding: 0 15px;
+    			font-family: sans-serif;
+			}
+			h2{
+				position: relative;
+			    max-width: 730px;
+			    width: 100%;
+			    float: left;
+			    text-align: center;
+			    font-size: 33px;
+			    line-height: 40px;
+			    color: #333;
+			    padding-bottom: 30px;
+			    margin-bottom: 20px;
+			}
+			form{
+				float: none;
+			    display: inline-block;
+			    max-width: 730px;
+			    width: 100%;
+			    margin-top: 10px;
+			}
+			fieldset{
+				border: 0;
+    			padding: 0;
+    			margin: 0;	
+			}
+			label{
+				color: #000;
+    			font-weight: 600;
+    			font-size: 18px;
+    			text-align: center;	
+    			display: block;
+			}
+			input, textarea{
+				margin-bottom: 8px;
+			    background: #fff;
+			    border: 1px solid #aaa;
+			    height: 55px;
+			    padding: 15px;
+			    float: left;
+			    color: #787878;
+			    font-size: 14px;
+			    line-height: 22px;	
+			}
+			textarea{
+				height: 100px;	
+			}
+			.form-field{
+				width: 50%;
+    			float: left;	
+			}
+			.form-field input, textarea{
+				width: 100% !important;	
+			}
+			.form-columns-2 .form-field{
+				padding: 0 0 10px 10px;	
+			}
+			.form-columns-2 .form-field:first-child{
+				padding: 0 10px 10px 0;	
+			}
+			input.button{
+				width: 100%;
+				margin-top: 20px;
+			    background: #006eb6;
+			    border: 0;
+			    font-size: 20px;
+			    line-height: 26px;
+			    color: #fff;
+			    transition: all .7s ease;	
+			}
+			div .chbx-field{
+				padding-top:10px;
+			}
+			.chbx-field input{
+				height:30px;	
+			}
+
+			.chbx-field label {
+				text-align:left;
+        		margin-left:20px;
+			}
+
+    </style> 
+    <apex:includeScript value="{!$Resource.jQuery}"/>
+    
+    <html xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" lang="en">
+	
+    <body>
+        <!--Page Header-->
+            <div class="pageHeaderContainer">
+                <div class="slds-grid">
+                    <div class="slds-col slds-has-flexi-truncate slds-size--1-of-3 pageHeaderLogo">
+                        <a href="{!$Label.Website_Home_Page}">
+                            <img src="{!$Resource.CompanyLogo1}" width="300" height="300"/>
+                        </a>
+                    </div>
+                    <div class="slds-col slds-has-flexi-truncate slds-size--1-of-3">
+                        <h1 class="pageHeaderTitle">{!$Label.Company_Page_Title}</h1>
+                    </div>
+                    <div class="slds-col slds-has-flexi-truncate slds-size--1-of-3" style="text-align:right;">
+                        <a href="{!$Label.Sallowing_Tablets_Home}">
+                            <img src="{!$Resource.CompanyLogo2}" width="100" height="100"/>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        <!--/Page Header-->
+        
+        <!--Page Body Section-->
+          <div class="bodyContainer">              
+          	<div id="confirmationSection" class="slds-box slds-theme_shade" style="text-align:center;">
+              	 <form action="{!$Label.Web_To_Lead_Action_Link}" method="POST" id="WebToLeadForm">
+                     <input type="hidden" name="oid" value="{!$Label.Organization_Id}"/>
+                     <input type="hidden" name="retURL" value="{!$Label.Web_To_Lead_Form}?status=showThankyou"/>                     
+                     <input id="lead_source" name="lead_source" type="hidden" value="{!$Label.Lead_Source_Hermes_Pharma_Website}" />
+                     <input type="hidden" name="Customer_IP__c" id="customerIp"/>
+                     
+                    <!-- {!$Label.Lead_Source_Market_Study} {!$Label.Lead_Source_Hermes_Pharma_Product_Portfolio} {!$Label.Lead_Source_Hermes_Pharma_Website}-->
+    				<fieldset class="form-columns-2">
+    					<div class="form-field">
+    						<label for="first_name">{!$Label.First_Name}</label>
+                            <input  id="first_name" maxlength="40" name="first_name" size="20" type="text" required="required"/><br/>
+    					</div>
+    					<div class="form-field">
+    						<label for="last_name">{!$Label.Last_Name}</label>
+    						<input  id="last_name" maxlength="80" name="last_name" size="20" type="text" required="required"/><br/>
+    					</div>
+    				</fieldset>
+    				<fieldset class="form-columns-2">
+    					<div class="form-field">
+    						<label for="company">{!$Label.Company}</label>
+    						<input  id="company" maxlength="40" name="company" size="20" type="text" required="required"/>
+    					</div>
+    					<div class="form-field">
+    						<label for="email">{!$Label.Email}</label>
+    						<input  id="email" maxlength="80" name="email" size="20" type="Email" required="required"/><br/>
+    					</div>		
+    				</fieldset>
+    				<fieldset>
+    					<div>
+    						<label for="description">{!$Label.Comment}</label>
+    						<textarea name="description" required="required"></textarea><br/>	
+    					</div>
+    				</fieldset>
+    				<fieldset>
+    					<div class="chbx-field">						
+    						<input  id="{!$Label.Email_Opt_In_Checkbox_Id}" name="{!$Label.Email_Opt_In_Checkbox_Id}" type="checkbox" value="1" />
+    						<label for="{!$Label.Email_Opt_In_Checkbox_Id}"> {!$Label.Email_Opt_In_Checkbox_Message}</label>	
+    					</div>
+                       
+                        <div class="chbx-field">						
+    						<input  id="00N5800000DfunQ" name="00N5800000DfunQ" type="checkbox" value="1" />
+    						<label for="00N5800000DfunQ"> Send Pdf Brochure (Email)</label>	
+    					</div>
+                        <div class="chbx-field">						
+    						<input  id="00N5800000DfunR" name="00N5800000DfunR" type="checkbox" value="1" />
+    						<label for="00N5800000DfunR"> Send Printed Brochure</label>	
+    					</div>
+						
+    				</fieldset>
+    
+    				<input class="button" type="submit" name="{!$Label.Submit}" value="Submit"/>
+			   </form>
+            </div>
+              
+             <!--Thankyou Section, this section contains Thank you message for confirmation of DOI-->
+            <div id="thankyouSection" class="slds-box slds-theme_shade slds-hide">
+                <header class="thankyouHeaderSection" id="thankyouHeader">
+                	<h1 class="thankyouLabel">{!$Label.thank_you}</h1>
+            	</header>
+                
+        		<div class="thankyouContent">
+                    <img src="{!$Resource.ThankyouSuccess}" height="150px" width="150px"/>
+                    <p class="thankyouContentBody" id="thankyouSectionBody">
+                      	{!$Label.Your_Form_is_Submitted_Successfully}
+                    </p>
+                </div>
+                
+                <div>
+                    <h1 class="allSectionsBodyText linksOnPage"><a href="{!$Label.Website_Home_Page}">{!$Label.Go_To_Home_Page}</a></h1>
+                </div>                
+            </div>
+            <!--/Thankyou Section, this section contains Thank you message for confirmation of DOI-->
+         </div>
+         <!--/Page Body Section-->
+        
+        <!--Footer Links To Page-->
+        <div class="slds-box slds-theme_shade footerLinks">
+            <div class="slds-size--1-of-2 footerOption1">
+                <a id="privacyPolicyLink" href="{!$Label.Privacy_Policy_Link_Hermes_Pharma}">{!$Label.Privacy_Policy}</a>
+            </div>
+            <div class="slds-size--1-of-2 footerOption2">
+                <a id="imprintLink" href="{!$Label.Imprint_Link_Hermes_Pharma}"> {!$Label.Imprint} </a>
+            </div>
+        </div>
+        <!--/Footer Links To Page-->
+        
+        <!--Page Footer-->
+            <footer role="contentinfo" class="pageFooter">
+                <p class="slds-col">{!$Label.Footer_Info_Text}</p>
+                <p class="slds-col">{!$Label.Footer_Copyright_Text_Of_Company_Website}</p>
+			</footer>
+        <!--/Page Footer-->
+    </body>
+    </html>
+    
+    <script>
+    	$(document).ready(function() {
+            $.getJSON("https://jsonip.com?callback=?", function(data) {
+                $('#customerIp').val(data.ip);
+            });
+            var res = "{!$CurrentPage.parameters.status}";
+            if(res == 'showThankyou'){
+                $('#confirmationSection').addClass("slds-hide");
+                $('#thankyouSection').removeClass("slds-hide");
+            }
+        });
+    
+    </script>
+</apex:page>
+
+<!--
+<div id="thankyouSection" class="slds-hide">
+<header class="thankyouHeaderSection" id="thankyouHeader">
+<h1 class="thankyouLabel">{!$Label.thank_you}</h1>
+</header>
+
+<div class="thankyouContent">
+<img src="{!$Resource.ThankyouSuccess}" height="150px" width="150px"/>
+<p class="thankyouContentBody" id="thankyouSectionBody">
+<apex:outputText value="{!$Label.Confirmation_doi_success}" escape="false">
+<apex:param value="http:/{!doiWebsite}"/>
+<apex:param value="{!doiWebsite}" />
+<apex:param value="{!$Label.Data_Protection_Email_Link}" />
+<apex:param value="{!$Label.Data_Protection_Email_Text}" />
+<apex:param value="http:/{!privacyPolicyLink}" />
+</apex:outputText>						
+</p>
+<br/>
+<p>{!$Label.Doi_Page_Thank_you}</p>
+<br/>
+<p>
+{!$Label.Hermes_Pharma} – <br/>
+{!$Label.A_Division_of_HERMES_Arzneimittel_GmbH}
+</p>
+</div>
+</div>
+-->

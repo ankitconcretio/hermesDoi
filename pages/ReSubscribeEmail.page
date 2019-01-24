@@ -1,0 +1,256 @@
+<!--
+@purpose: This page used by subscriber to re-subscribe email notifications.
+@author:  Cloud Consulting Group GmbH
+@email:   support@cloudconsulting24.com
+
+@history:
+version                   | author                       | changes
+====================================================================================
+1.0 (20-04-2018)          | Cloud Consulting Group GmbH  | initial version
+-->
+<apex:page showHeader="false" standardStylesheets="false" sidebar="false" controller="ReSubscribeEmailCtlr" cache="false">
+    <head>
+		<meta name="robots" content="noindex" />
+	</head>
+    <apex:stylesheet value="{!$Resource.DOIStylesheet}"/>
+    <apex:slds />   
+    <apex:includeScript value="{!$Resource.jQuery}"/>
+    
+    <body>
+        <!--Page Header-->
+            <div class="pageHeaderContainer">
+                <div class="slds-grid">
+                    <div class="slds-col slds-has-flexi-truncate slds-size--1-of-3 pageHeaderLogo">
+                        <a href="{!$Label.Website_Home_Page}">
+                            <img src="{!$Resource.CompanyLogo1}" width="300" height="300"/>
+                        </a>
+                    </div>
+                    <div class="slds-col slds-has-flexi-truncate slds-size--1-of-3">
+                        <h1 class="pageHeaderTitle">{!$Label.Company_Page_Title}</h1>
+                    </div>
+                    <div class="slds-col slds-has-flexi-truncate slds-size--1-of-3" style="text-align:right;">
+                        <a href="{!$Label.Sallowing_Tablets_Home}">
+                            <img src="{!$Resource.CompanyLogo2}" width="100" height="100"/>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        <!--/Page Header-->
+        
+        <!--Page Body Section-->
+        <div class="bodyContainer" lang="en">
+            
+            <!--Verify Email Section-->
+            <div id="verifyEmailSection" class="slds-box slds-theme_shade">
+                <div class="allSectionsBody">              
+                    <h1 class="allSectionsBodyText">
+                        {!$Label.Please_verify_your_email_address_to_re_subscribe}                        
+                    </h1>
+                    <br/>
+                    <center>
+                        <!--Form-->
+                        <form id="myForm">
+                            <!--Email Field-->
+                            <div class="slds-form-element" id="inputEmailContainer">
+                              <label class="slds-form-element__label" for="inputEmail" style="float:left;">
+                                <abbr class="slds-required" title="required">*</abbr> {!$Label.Email_Address}</label>
+                              <div class="slds-form-element__control">
+                                <input type="email" aria-describedby="error-message" id="inputEmail" class="slds-input" 
+                                       placeholder="{!$Label.Enter_Your_Email_Address}"/>
+                              </div>
+                              <div id="error-message" class="slds-form-element__help slds-hide">{!$Label.Email_Address_is_Required}</div>
+                            </div> 
+                            <!--/Email Field-->
+                            <!--Checkbox Email Opt In-->
+                            <div class="slds-form-element" id="inputCheckboxContainer">
+                              <div class="slds-form-element__control">
+                                <span class="slds-checkbox">
+                                  <abbr class="slds-required" title="required">*</abbr>
+                                  <input type="checkbox" name="options" id="checkboxInput" aria-describedby="checkboxErrorMessage" 
+                                         value="on"/>
+                                  <label class="slds-checkbox__label" for="checkboxInput">
+                                    <span class="slds-checkbox_faux"></span>
+                                    <span class="slds-form-element__label">{!$Label.Email_Opt_In}</span>
+                                  </label>
+                                </span>
+                              </div>
+                              <div id="checkboxErrorMessage" class="slds-form-element__help slds-hide">{!$Label.This_field_is_required}</div>
+                            </div>
+                            <!--/Checkbox Email Opt In-->
+                            <br/>
+                            <input type="submit" id="submitButton" class="slds-button slds-button_brand" 
+                                   value="{!$Label.Submit}" style="margin-top:10px;"/>                            
+                        </form>
+                        <!--/Form-->
+                    </center>
+                    <br/>
+                    <h1 class="allSectionsBodyText errorMessageColor" id="invalidEmail"></h1>
+                </div>
+            </div>
+            <!--/Verify Email Section-->
+            
+            <!--Thankyou Section, this section contains Thank you message for confirmation of DOI-->
+            <div id="thankyouSection" class="slds-box slds-theme_shade slds-hide">
+                <header class="thankyouHeaderSection" id="thankyouHeader">
+                	<h1 class="thankyouLabel">{!$Label.thank_you}</h1>
+            	</header>
+                
+        		<div class="thankyouContent">
+                    <img src="{!$Resource.ThankyouSuccess}" height="150px" width="150px"/>
+                    <p class="thankyouContentBody" id="thankyouSectionBody">
+                      	{!$Label.Subscribe_Confirmation_Success}
+                        <br/>
+                        {!$Label.Please_check_your_email_to_confirm_your_DOI}
+                    </p>
+                </div>
+                <div>
+                    <h1 class="allSectionsBodyText linksOnPage"><a href="{!$Label.Website_Home_Page}">{!$Label.Go_To_Home_Page}</a></h1>
+                </div>                
+            </div>
+            <!--/Thankyou Section, this section contains Thank you message for confirmation of DOI-->
+
+            <!--Record Not Found Section-->
+            <div id="recordNotFoundSection" class="slds-box slds-theme_shade slds-hide">
+                <div class="allSectionsBody">
+                    <h1 class="allSectionsBodyText errorMessageColor">
+                        <p class="errorMessageColor" id="recordNotFoundSectionBody">{!$Label.Subscriber_Record_Not_Found}</p>
+                    </h1>
+                    
+                    <h1 class="allSectionsBodyText linksOnPage">                       
+                        <a href="{!$Label.Website_Home_Page}">{!$Label.Go_To_Home_Page}</a>
+                    </h1>
+                </div>
+            </div>
+            <!--/Record Not Found Section-->
+        </div>
+        <!--/Page Body Section-->
+        
+        <!--Footer Links To Page-->
+        <div class="slds-box slds-theme_shade footerLinks">
+            <div class="slds-size--1-of-2 footerOption1">
+                <a id="privacyPolicyLink" href="{!$Label.Privacy_Policy_Link_Hermes_Pharma}">{!$Label.Privacy_Policy}</a>
+            </div>
+            <div class="slds-size--1-of-2 footerOption2">
+                <a id="imprintLink" href="{!$Label.Imprint_Link_Hermes_Pharma}"> {!$Label.Imprint} </a>
+            </div>
+        </div>
+        <!--/Footer Links To Page-->
+        
+        <!--Page Footer-->
+            <footer role="contentinfo" class="pageFooter">
+                <p class="slds-col">{!$Label.Footer_Info_Text}</p>
+                <p class="slds-col">{!$Label.Footer_Copyright_Text_Of_Company_Website}</p>
+			</footer>
+        <!--/Page Footer-->
+    </body>
+    
+    <script>      
+    	$(document).ready(function() {
+            var recordId = '{!recordId}';
+            var currentPageName = '{!currentPageName}';
+            var ipAddress = '{!ipAddress}';
+            var leadSource = '{!leadSource}';
+            if(leadSource == '{!$Label.Lead_Source_Market_Study}'){
+                $("#privacyPolicyLink").attr("href", "{!$Label.Privacy_Policy_Link_Market_Study}");
+                $("#imprintLink").attr("href", "{!$Label.Imprint_Link_Market_Study}");
+            }
+
+            $("#checkboxInput").prop( "checked", true );
+            $('#checkboxInput').click(function() {
+                if(!$(this).is(':checked')){
+                    $('#inputCheckboxContainer').addClass('slds-has-error');
+                    $('#checkboxErrorMessage').removeClass("slds-hide");
+                    $('#submitButton').attr('disabled',true);
+                }
+                else{
+                    $('#inputCheckboxContainer').removeClass('slds-has-error');
+                    $('#checkboxErrorMessage').addClass("slds-hide");
+                    $('#submitButton').attr('disabled',false);
+                }
+            });
+            $("#inputEmail").keyup(function(){
+                $('#inputEmailContainer').removeClass('slds-has-error');
+                $('#error-message').addClass("slds-hide");
+                $('#invalidEmail').addClass("slds-hide");
+            });                
+            $('#myForm').submit(function(ev){
+                var emailId = $('#inputEmail').val();
+                if(emailId != ''){       
+                    var reSubscribeValues = {
+                        "emailId"           : emailId,
+                        "recordId"          : recordId,
+                        "currentPageName"   : currentPageName,
+                        "ipAddress"         : ipAddress,
+                        "emailOption"       : false,
+                        "telephoneOption"   : false,
+                        "postOption"        : false,
+                        "generalOptOption"  : false
+                    };
+                    Visualforce.remoting.Manager.invokeAction(
+                        '{!$RemoteAction.ReSubscribeEmailCtlr.resubscribeEmail}',
+             			JSON.stringify(reSubscribeValues),
+                        function(result, event){
+                            if (event.status){
+                                if(result == 0){
+                                    $('#verifyEmailSection').addClass("slds-hide");
+                                    $('#thankyouSection').removeClass("slds-hide");
+                                }
+                                else if(result == 3){
+                                    $('#verifyEmailSection').addClass("slds-hide");
+                                    $('#thankyouSection').removeClass("slds-hide");
+                                    $('#thankyouSectionBody').html("{!$Label.Already_Subscribed}");
+                                }
+                                else if(result == 1){
+                                    $('#inputEmailContainer').addClass('slds-has-error');
+                    				$('#error-message').removeClass("slds-hide");
+                                    $('#error-message').html("{!$Label.You_are_not_subscribed_to_our_E_Mail_newsletter}"
+                                                                 +"<br/><span style='color:black;'>{!$Label.Please_click_here_to_subscribe}</span>"
+                                                                 +"<span class='linksOnPage'>"
+                                                                 +"<a href='{!$Label.Hermes_Pharma_Contact_Us}'>"
+                                                                 +"Contact Us</a></span>");
+                                }
+                                else if(result == 5){
+                                	$('#verifyEmailSection').addClass("slds-hide");
+                                    $('#recordNotFoundSection').removeClass("slds-hide");
+                                    $('#recordNotFoundSectionBody').html("{!$Label.Permission_Required_To_Update}");
+                                }
+                                else if(result == 2){
+                                    $('#inputEmailContainer').addClass('slds-has-error');
+                                    $('#error-message').removeClass("slds-hide");
+                                    $('#error-message').html("{!$Label.Duplicate_Email_Found}");
+                                }
+                                else if(result == 6){
+                                	$('#verifyEmailSection').addClass("slds-hide");
+                                    $('#recordNotFoundSection').removeClass("slds-hide");
+                                    $('#recordNotFoundSectionBody').html("{!$Label.Record_Not_Updated}");
+                                }
+                                else if(result == 4){
+                                	$('#inputEmailContainer').addClass('slds-has-error');
+                                    $('#error-message').removeClass("slds-hide");
+                                    $('#error-message').html("{!$Label.Email_Field_is_blank}");
+                                }
+                                else if(result == 7){
+                                	$('#verifyEmailSection').addClass("slds-hide");
+                                    $('#recordNotFoundSection').removeClass("slds-hide");
+                                    $('#recordNotFoundSectionBody').html("{!$Label.Failure_In_Email_Sending}");
+                                }
+                                else if(result == 8){
+                                	$('#verifyEmailSection').addClass("slds-hide");
+                                    $('#thankyouSection').removeClass("slds-hide");
+                                    $('#thankyouSectionBody').html("{!$Label.Please_check_your_email_to_re_subscribe_newsletter}");
+                                }
+                            }
+                        },
+                        {escape: true}
+                    );       
+                }
+                else{
+                    $('#inputEmailContainer').addClass('slds-has-error');
+                    $('#error-message').removeClass("slds-hide");
+                    $('#error-message').html("{!$Label.Email_Address_is_Required}");
+                }
+                ev.preventDefault();
+            });                
+        });     	
+    </script>
+</apex:page>

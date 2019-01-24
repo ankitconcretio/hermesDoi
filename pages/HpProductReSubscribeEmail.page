@@ -1,0 +1,401 @@
+<apex:page showHeader="false" standardStylesheets="false" sidebar="false" cache="false" controller="ReSubscribeEmailCtlr">
+    <apex:stylesheet value="{!$Resource.ProductPortfolioDoiStylesheet}"/>
+    <apex:stylesheet value="{!$Resource.HermesPharmaPageStylesheet}"/>
+    <apex:includeScript value="{!$Resource.jQuery}"/>
+    <apex:slds />
+    <link href="https://fonts.googleapis.com/css?family=Shadows+Into+Light" rel="stylesheet"/>
+    <style>
+       .slds-scope .addressHowToFind:before{
+            background-image: url({!$Resource.HermesOrangeArrow});
+        }
+        .slds-scope .confirmationSectionButton, .submitButtonGreen{
+            background: #008243;
+        }
+        .slds-scope a.medium-button-green{
+        	background: #008243;
+        }
+        @font-face {
+        	font-family: frutiger-lts-light;
+        	src: url({!$Resource.HermesPharmaFrutigerFontOtf}), url({!$Resource.HermesPharmaFrutigerFontWoff});
+        }
+    </style>
+    
+    <div class="pageBody">
+        <!--Page Header-->
+        <div class="pageHeaderSection">
+            <div class="pageHeaderContainer">
+                <div class="pageHeaderLogo">
+                    <a href="{!$Label.Hermes_Pharma_Home_Page}">
+                        <img src="{!$Resource.CompanyLogo1}"/>
+                    </a>
+                </div>
+                <div>
+                    
+                </div>
+            </div>
+        </div>
+        <!--/Page Header-->
+        
+        <div class="pageContentContainer">
+            <!--Front Img Section-->
+            <div class="frontImageSection">
+                <div class="frontImgInnerDiv">
+                    <div class="frontImgInnerDivGrid">
+                        <div class="contactImgContainer">
+                            <img src="{!$Resource.HermesPharmaContactImage}"/>
+                            <div class="contactImgDetail">
+                                <div class="contactImgDetailPosition">
+                                    <p class="contactImgDetailText">
+                                        Would you like to get in touch? Call us: 
+                                        <a style="color: #ffffff;" href="tel:49-89-79102-261">+49 89 79102 261</a>
+                                        <!-- or use the contact form below-->
+                                    </p>   
+                                </div>    
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--/Front Img Section-->
+            
+            <div class="contentHeadSection">  
+                <div class="contentHead">
+                </div>     
+            </div> 
+            
+            <!--Page Content Section-->
+            <div>
+                <div class="slds-grid slds-wrap pageContentSection">
+                    <div class="doiContainer">
+                        <div lang="en" class="doiContent">
+                            <!--Verify Email Section-->
+                            <div id="verifyEmailSection" class="">
+                                <div class="allSectionsBody">              
+                                    <h1 class="allSectionsBodyText">
+                                        {!$Label.Please_verify_your_email_address_to_re_subscribe}                        
+                                    </h1>
+                                    <br/>
+                                    <center>
+                                        <!--Form-->
+                                        <form id="myForm">
+                                            <!--Email Field-->
+                                            <div class="slds-form-element" id="inputEmailContainer">
+                                                <label class="fillRequiredColor" for="inputEmail" style="float:left;">
+                                                    <abbr class="slds-required" title="required">*</abbr> {!$Label.Email_Address}</label>
+                                                <div class="slds-form-element__control">
+                                                    <input type="email" aria-describedby="error-message" id="inputEmail" class="slds-input" 
+                                                           placeholder="{!$Label.Enter_Your_Email_Address}"/>
+                                                </div>
+                                                <div id="error-message" class="slds-form-element__help slds-hide">{!$Label.Email_Address_is_Required}</div>
+                                            </div> 
+                                            <!--/Email Field-->
+                                            <!--Checkbox Resubscribe-->
+                                            <div class="slds-form-element" id="inputCheckboxContainer">
+                                                <div id="checkboxErrorMessage" class="slds-form-element__help slds-hide">{!$Label.This_field_is_required}</div>
+                                                
+                                                <fieldset class="slds-form-element" id="unsubscribeForm">
+                                                    <label class="fillRequiredColor">
+                                                        <abbr class="slds-required" title="required">*</abbr>
+                                                        <apex:outputText value="{!$Label.Agree_to_be_contacted}" escape="false">
+                                                        </apex:outputText>
+                                                    </label>
+                                                    <div class="slds-form-element__control checkboxArea">
+                                                        <span class="slds-checkbox checkboxMargin">
+                                                            <input type="checkbox" name="UnsubOptions" id="emailOption1" aria-describedby="checkboxErrorMessage" value="on" 
+                                                                   class="OptInCheckboxes"/>
+                                                            <label class="slds-checkbox__label" for="emailOption1">
+                                                                <span class="slds-checkbox_faux"></span>
+                                                                <span class="fillRequiredColor">{!$Label.Checkbox_Email}
+                                                                    <span class="errorMessageColor">*</span></span>
+                                                            </label>
+                                                        </span>
+                                                        <span class="slds-checkbox checkboxMargin">
+                                                            <input type="checkbox" name="UnsubOptions" id="telephoneOption2" value="on" 
+                                                                   class="OptInCheckboxes"/>
+                                                            <label class="slds-checkbox__label" for="telephoneOption2">
+                                                                <span class="slds-checkbox_faux"></span>
+                                                                <span class="fillRequiredColor">{!$Label.Checkbox_Telephone}
+                                                                    <span class="errorMessageColor">*</span></span>
+                                                            </label>
+                                                        </span>
+                                                        <span class="slds-checkbox">
+                                                            <input type="checkbox" name="UnsubOptions" id="postOption3" value="on" 
+                                                                   class="OptInCheckboxes"/>
+                                                            <label class="slds-checkbox__label" for="postOption3">
+                                                                <span class="slds-checkbox_faux"></span>
+                                                                <span class="fillRequiredColor">{!$Label.Checkbox_Post}
+                                                                    <span class="errorMessageColor">*</span></span>
+                                                            </label>
+                                                        </span>
+                                                        <span class="slds-checkbox checkboxMargin">
+                                                            <br/>
+                                                            <input type="checkbox" name="UnsubOptions" id="DoNotWantContacted" value="on" />
+                                                            <label class="slds-checkbox__label" for="DoNotWantContacted">
+                                                                <span class="slds-checkbox_faux"></span>
+                                                                <span class="fillRequiredColor">{!$Label.Do_Not_Want_To_Be_Contacted}
+                                                                    <span class="errorMessageColor">*</span></span>
+                                                            </label>
+                                                        </span>
+                                                        
+                                                    </div>
+                                                    <div id="checkboxGroupErrorMsg" class="slds-form-element__help slds-hide">{!$Label.Resubscribe_Checkbox_Error_Message}</div>
+                                                </fieldset> 
+                                                
+                                                <span class="resubscribePageEmailOptInRelatedText">
+                                                    <apex:outputText value="{!$Label.Email_Opt_In_Related_Text_on_Resubscribe_Page}" escape="false">
+                                                        <apex:param value="{!$Label.Data_Protection_Email_Link}"/>
+                                                        <apex:param value="{!$Label.Data_Protection_Email_Text}" />
+                                                        <apex:param value="{!$Label.Privacy_Policy_Link_Hermes_Pharma}" />
+                                                        <apex:param value="{!$Label.Privacy_Policy_Link_Hermes_Pharma}" />
+                                                    </apex:outputText>
+                                                </span>
+                                            </div>
+                                            <!--/Checkbox Resubscribe-->
+                                            <br/>
+                                            <input type="submit" id="submitButton" class="submitButtonGreen" value="{!$Label.Submit}"/>                            
+                                        </form>
+                                        <!--/Form-->
+                                    </center>
+                                    <br/>
+                                    <h1 class="allSectionsBodyText errorMessageColor" id="invalidEmail"></h1>
+                                </div>
+                            </div>
+                            <!--/Verify Email Section-->
+                            
+                            <!--Thankyou Section, this section contains Thank you message for confirmation of DOI-->
+                            <div id="thankyouSection" class="slds-hide">
+                                <div class="thankyouContent">
+                                    <p id="thankyouSalutation">{!salutation},</p>
+                                    <br/>  
+                                    <span class="thankyouContentBody" id="thankyouSectionBody">
+                                        <apex:outputText value="{!$Label.Message_When_Record_Not_Found_On_Resubscription_Page}" escape="false">
+                                            <apex:param value="{!$Label.Hermes_Pharma_Home_Page}"/>
+                                            <apex:param value="{!$Label.HomePage}" />
+                                        </apex:outputText>
+                                        <!--{!$Label.Please_check_your_email_to_confirm_your_DOI}-->
+                                    </span>
+                                    <br/><br/>
+                                    
+                                    <p>{!$Label.Doi_Page_Thank_you}</p>
+                                    <br/>
+                                    <p>
+                                        {!$Label.Hermes_Pharma} – <br/>
+                                        {!$Label.A_Division_of_HERMES_Arzneimittel_GmbH}
+                                    </p>
+                                </div>               
+                            </div>
+                            <!--/Thankyou Section, this section contains Thank you message for confirmation of DOI-->
+                            
+                            <!--Record Not Found Section-->
+                            <div id="recordNotFoundSection" class="slds-hide">
+                                <div class="allSectionsBody">
+                                    <h1 class="allSectionsBodyText errorMessageColor">
+                                        <p class="errorMessageColor" id="recordNotFoundSectionBody">{!$Label.Subscriber_Record_Not_Found}</p>
+                                    </h1>
+                                    
+                                    <h1 class="allSectionsBodyText linksOnPage">                       
+                                        <a href="{!$Label.Hermes_Pharma_Home_Page}">{!$Label.Go_To_Home_Page}</a>
+                                    </h1>
+                                </div>
+                            </div>
+                            <!--/Record Not Found Section-->
+                        </div>
+                    </div>
+                    
+                    <!--Address Section-->
+                    <div class="addressSectionContainer">
+                        <div class="addressSection">     
+                            <div class="addressSectionArea">
+                                <div class="addressSectionInnerArea">
+                                    <h1 class="pageSideHeadings">Our headquarters in Pullach</h1>
+                                    <p class="bodytext">HERMES ARZNEIMITTEL GmbH<br/>
+                                        Division HERMES PHARMA<br/>
+                                        Georg-Kalb-Strasse 5-8<br/><br/>
+                                        82049 Pullach <br/>Germany<br/><br/>
+                                        Phone +49 89 79102 261<br/>
+                                        Fax +49 89 79102 159 <br/>
+                                        <a style="color:#ff9933;" href="{!$Label.Hermes_Pharma_Contact_Us_Headquater}" title="Directions to HERMES PHARMA in Germany">
+                                            <span class="addressHowToFind">How to find uS</span>
+                                        </a>
+                                    </p>    
+                                </div>    
+                            </div>
+                        </div>
+                    </div>
+                    <!--/Address Section-->
+                </div>
+            </div>   
+            <!--/Page Content Section-->  
+        </div>
+        
+       <!--Footer Section-->
+        <div class="pageFooter">
+            <div class="footer-wrapper">
+                <div class="slds-grid slds-wrap">
+                    <div class="slds-size_1-of-2 imprintFooterAlign">
+                        <a style="color: #ffffff;" href="{!$Label.Imprint_Link_Hermes_Pharma}" 
+                           title="Imprint">
+                            {!$Label.Imprint}
+                        </a>    
+                    </div>
+                    <div class="slds-size_1-of-2 PrivacyFooterAlign">
+                        <a style="color: #ffffff;" href="{!$Label.Privacy_Policy_Link_Hermes_Pharma}" 
+                           title="Privacy Policy">
+                            {!$Label.Privacy_Policy}
+                        </a>    
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--Footer Section-->
+        
+    </div>
+
+ <script>      
+        $(document).ready(function() {
+            var recordId = '{!recordId}';
+            var currentPageName = '{!currentPageName}';
+            var ipAddress = '{!ipAddress}';
+            var leadSource = '{!leadSource}';
+            console.log('recordId>>' + recordId);
+            if(recordId == '' || recordId == null || recordId == undefined){
+                $('#verifyEmailSection').addClass("slds-hide");
+                $('#thankyouSection').removeClass("slds-hide");
+                $('#thankyouSalutation').html("{!$Label.Dear_Visitor}");  
+            }
+            
+            if({!postalOptIn} == true){
+                $("#postOption3").attr("disabled", true);
+            }
+            if({!telephoneOptIn} == true){
+                $("#telephoneOption2").attr("disabled", true); 
+            }
+            if({!emailOptIn} == true){
+                $("#emailOption1").attr("disabled", true);
+            }
+            if({!generalOptOut} == true){
+                $("#DoNotWantContacted").attr("disabled", true);
+            }
+
+            $('#DoNotWantContacted').click(function() {
+                if($(this).is(':checked')){
+                     console.log(' if checkboxInput');
+                    $("#emailOption1").prop( "checked", false );
+                    $("#telephoneOption2").prop( "checked", false );
+                    $("#postOption3").prop( "checked", false );
+                }
+            });
+            
+            $('.OptInCheckboxes').click(function() {
+                if ($('.OptInCheckboxes:checked').length == 1) {
+                	$("#DoNotWantContacted").prop( "checked", false );  
+                }
+            });
+            
+            $("#inputEmail").keyup(function(){
+                 console.log('inputEmail');
+                $('#inputEmailContainer').removeClass('slds-has-error');
+                $('#error-message').addClass("slds-hide");
+                $('#invalidEmail').addClass("slds-hide");
+            });
+            
+            $('input[name="UnsubOptions"]').click(function() {
+                if ($('input[name="UnsubOptions"]:checked').length == 1) {
+                    $('#unsubscribeForm').removeClass('slds-has-error');
+                    $('#checkboxGroupErrorMsg').addClass('slds-hide');
+                }
+            });
+        
+            $('#myForm').submit(function(ev){
+                var emailId = $('#inputEmail').val();
+                if(emailId == '' || emailId == undefined || emailId == null){
+                    $('#inputEmailContainer').addClass('slds-has-error');
+                    $('#error-message').removeClass("slds-hide");
+                    $('#error-message').html("{!$Label.Email_Address_is_Required}");
+                }
+                else if(!$('input[name="UnsubOptions"]:checked').length > 0){
+                    $('#unsubscribeForm').addClass('slds-has-error');
+                    $('#checkboxGroupErrorMsg').removeClass('slds-hide');
+                    ev.preventDefault();
+                }
+                else{  
+                    var emailOption = $('#emailOption1').is(':checked');
+                    var telephoneOption = $('#telephoneOption2').is(':checked');
+                    var postOption = $('#postOption3').is(':checked');
+                    var DoNotWantContact = $('#DoNotWantContacted').is(':checked');
+                    
+                    var reSubscribeValues = {
+                        "emailId"           : emailId,
+                        "recordId"          : recordId,
+                        "currentPageName"   : currentPageName,
+                        "ipAddress"         : ipAddress,
+                        "emailOption"       : $('#emailOption1').is(':checked'),
+                        "telephoneOption"   : $('#telephoneOption2').is(':checked'),
+                        "postOption"        : $('#postOption3').is(':checked'),
+                        "generalOptOption"  : $('#DoNotWantContacted').is(':checked')
+                    };
+                    
+                    Visualforce.remoting.Manager.invokeAction(
+                        '{!$RemoteAction.ReSubscribeEmailCtlr.resubscribeEmail}',
+                        JSON.stringify(reSubscribeValues),
+                        function(result, event){
+                            if (event.status){
+                                if(result == 0){
+                                    $('#verifyEmailSection').addClass("slds-hide");
+                                    $('#thankyouSection').removeClass("slds-hide");
+                                    $('#thankyouSectionBody').html("{!$Label.Subscribe_Confirmation_Success_Email_Opt_In}");
+                                }
+                                else if(result == 1){
+                                    $('#inputEmailContainer').addClass('slds-has-error');
+                                    $('#error-message').removeClass("slds-hide");
+                                    $('#error-message').html("{!$Label.You_are_not_subscribed_to_our_E_Mail_newsletter}"
+                                                                 +"<br/><span style='color:black;'>{!$Label.Please_click_here_to_subscribe}</span>"
+                                                                 +"<span class='linksOnPage'>"
+                                                                 +"<a href='{!$Label.Hermes_Pharma_Contact_Us}'>"
+                                                                 +"Contact Us</a></span>");
+                                }
+                                else if(result == 3){
+                                    $('#verifyEmailSection').addClass("slds-hide");
+                                    $('#recordNotFoundSection').removeClass("slds-hide");
+                                    $('#recordNotFoundSectionBody').html("{!$Label.Record_Not_Updated}");
+                                }
+                                else if(result == 2){
+                                    $('#inputEmailContainer').addClass('slds-has-error');
+                                    $('#error-message').removeClass("slds-hide");
+                                    $('#error-message').html("{!$Label.Email_Field_is_blank}");
+                                }
+                                else if(result == 4){
+                                    $('#verifyEmailSection').addClass("slds-hide");
+                                    $('#thankyouSection').removeClass("slds-hide");
+                                    $('#thankyouSalutation').html("{!$Label.Dear_Visitor}");
+                                }
+                                else if(result == 5){
+                                    $('#verifyEmailSection').addClass("slds-hide");
+                                    $('#thankyouSection').removeClass("slds-hide");
+                                    $('#thankyouSectionBody').html("{!$Label.General_Opt_Out_Confirmation_Message}");
+                                }
+                                else if(result == 6){
+                                    $('#verifyEmailSection').addClass("slds-hide");
+                                    $('#thankyouSection').removeClass("slds-hide");
+                                    $('#thankyouSectionBody').html("{!$Label.Subscribe_Confirmation_Success}");
+                                }
+                                else if(result == 7){
+                                    $('#verifyEmailSection').addClass("slds-hide");
+                                    $('#thankyouSection').removeClass("slds-hide");
+                                    $('#thankyouSectionBody').html("{!$Label.Subscribe_Confirmation_Success_Tel}");
+                                }
+                                else if(result == 8){
+                                    $('#verifyEmailSection').addClass("slds-hide");
+                                    $('#thankyouSection').removeClass("slds-hide");
+                                    $('#thankyouSectionBody').html("{!$Label.Subscribe_Confirmation_Success_Postal_OptIn}");
+                                }
+                            }
+                        },
+                        {escape: true}
+                    );       
+                }
+                ev.preventDefault();
+            });                
+        });         
+    </script>
+</apex:page>

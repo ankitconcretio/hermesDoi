@@ -1,0 +1,18 @@
+<apex:page standardController="Lead" >
+    <apex:includeScript value="{!$Resource.jQuery}"/>
+    <script>
+        $(document).ready(function () {
+        var previousButtonCount = $(".FlowPreviousBtn").length;         
+            $(".FlowNextBtn").each(function(index) {
+                console.log(index);
+                if(previousButtonCount != 0){
+                    $(this).attr("value","Finish And Send");
+                }  
+            });
+        });
+    </script>
+    
+    <flow:interview name="Forward_Lead_Flow" finishLocation="/{!Lead.Id}">
+        <apex:param name="LeadId" value="{!Lead.Id}" />
+    </flow:interview>
+</apex:page>

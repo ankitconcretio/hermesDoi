@@ -1,0 +1,275 @@
+<!--
+@purpose: This page used by subscriber to unsubscribe email notifications.
+@author:  Cloud Consulting Group GmbH
+@email:   support@cloudconsulting24.com
+
+@history:
+version                   | author                       | changes
+====================================================================================
+1.0 (11-04-2018)          | Cloud Consulting Group GmbH  | initial version
+-->
+
+<apex:page showHeader="false" standardStylesheets="false" sidebar="false" controller="UnsubscribeEmailCtlr" cache="false">
+    <head>
+		<meta name="robots" content="noindex" />
+	</head>
+    <apex:stylesheet value="{!$Resource.DOIStylesheet}"/>
+    <apex:slds />
+    <apex:includeScript value="{!$Resource.jQuery}"/>
+    
+    <body>
+        <!--Page Header-->
+            <div class="pageHeaderContainer">
+                <div class="slds-grid">
+                    <div class="slds-col slds-has-flexi-truncate slds-size--1-of-3 pageHeaderLogo">
+                        <a href="{!$Label.Website_Home_Page}">
+                            <img src="{!$Resource.CompanyLogo1}" width="300" height="300"/>
+                        </a>
+                    </div>
+                    <div class="slds-col slds-has-flexi-truncate slds-size--1-of-3">
+                        <h1 class="pageHeaderTitle">{!$Label.Company_Page_Title}</h1>
+                    </div>
+                    <div class="slds-col slds-has-flexi-truncate slds-size--1-of-3" style="text-align:right;">
+                        <a href="{!$Label.Sallowing_Tablets_Home}">
+                            <img src="{!$Resource.CompanyLogo2}" width="100" height="100"/>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        <!--/Page Header-->
+        
+        <!--Page Body Section-->
+        <div class="bodyContainer" lang="en">       
+           <!--Unsubscribe Button Section-->
+            <div id="unsubscribeButtonSection" class="slds-box slds-theme_shade slds-hide">
+                <div class="confirmationSection">
+                    <p> {!salutation},</p>
+                    <br/>
+                    <p>{!$Label.Click_to_Unsubscribe}</p>
+                    
+                    <button type="button" id="unsubscribeButton" class="confirmationSectionButton" onclick="clickUnsubscribe()">
+                        {!$Label.Unsubscribe}
+                    </button>
+                    
+                    <p>{!$Label.Doi_Page_Thank_you}</p>
+                    <br/>
+                    <p>
+                        {!$Label.Hermes_Pharma} – <br/>
+                        {!$Label.A_Division_of_HERMES_Arzneimittel_GmbH}
+                    </p>
+                </div>
+            </div>
+           <!--/Unsubscribe Button Section-->
+            
+            <!--Unsubscribed Section, it display after Unsubscription-->
+            <div id="unsubscribedSection" class="slds-box slds-theme_shade slds-hide">
+                <div class="allSectionsBody">
+                    <h1 class="allSectionsBodyText" id="unsubscribedSectionBody">
+                        <p> {!salutation},</p>
+                        <br/>
+                        <p id="unsubscribedSectionMessage"> 
+                            {!$Label.Unsubscribe_Confirmation} 
+                        </p>
+                        <br/>
+                        <p>{!$Label.If_you_would_like_to_re_subscribe_please_click_the_link_below}</p>
+                        <a href="{!$Label.ReSubscribe_Email_Url}?Id={!recordId}">{!$Label.Re_Subscribe}</a>
+                    </h1>
+                    <br/>
+					<h1 class="allSectionsBodyText linksOnPage">                       
+                        <a href="Hermes_Pharma_Contact_Us">{!$Label.Go_To_Home_Page}</a>
+                    </h1>                    
+                </div> 
+            </div>
+            <!--/Unsubscribed Section, it display after Unsubscription-->
+            
+            <!--Record Not Found Section-->
+            <div id="recordNotFoundSection" class="slds-box slds-theme_shade slds-hide">
+                <div class="confirmationSection">
+                    <p>{!$Label.Dear_Visitor},</p>
+                    <br/>                                  
+                    <p>{!$Label.Please_verify_your_email_address_to_unsubscribe}</p>
+                    <center>
+                        <form id="myForm">
+                            <div class="slds-form-element" id="inputEmailContainer">
+                              <label class="slds-form-element__label" for="inputEmail" style="float:left;">
+                                <abbr class="slds-required" title="required">*</abbr> {!$Label.Email_Address}</label>
+                              <div class="slds-form-element__control">
+                                <input type="email" required="" aria-describedby="error-message" id="inputEmail" class="slds-input" 
+                                       placeholder="{!$Label.Enter_Your_Email_Address}"/>
+                              </div>
+                              <div id="error-message" class="slds-form-element__help slds-hide">{!$Label.Email_Address_is_Required}</div>
+                            </div>                                             
+                            <input type="submit" id="confirmDoiButton" class="doiButton" value="{!$Label.Unsubscribe}"/>
+                            <br/>
+                            <h1 class="allSectionsBodyText errorMessageColor" id="invalidEmail"></h1>
+                        </form>
+                    </center>
+                    
+                    <br/>
+                    <p>{!$Label.Doi_Page_Thank_you}</p>
+                    <br/>
+                    <p>
+                        {!$Label.Hermes_Pharma} – <br/>
+                        {!$Label.A_Division_of_HERMES_Arzneimittel_GmbH}
+                    </p>
+                </div>
+            </div>
+            <!--/Record Not Found Section-->
+        </div>
+        <!--/Page Body Section-->
+        
+        <!--Footer Links To Page-->
+        <div class="slds-box slds-theme_shade footerLinks">
+            <div class="slds-size--1-of-2 footerOption1">
+                <a id="privacyPolicyLink" href="{!$Label.Privacy_Policy_Link_Hermes_Pharma}">{!$Label.Privacy_Policy}</a>
+            </div>
+            <div class="slds-size--1-of-2 footerOption2">
+                <a id="imprintLink" href="{!$Label.Imprint_Link_Hermes_Pharma}"> {!$Label.Imprint} </a>
+            </div>
+        </div>
+        <!--/Footer Links To Page-->
+        
+        <!--Page Footer-->
+            <footer role="contentinfo" class="pageFooter">
+                <p class="slds-col">{!$Label.Footer_Info_Text}</p>
+                <p class="slds-col">{!$Label.Footer_Copyright_Text_Of_Company_Website}</p>
+			</footer>
+        <!--/Page Footer-->
+    </body>   
+    
+    <script>  
+       
+    $(document).ready(function() {
+        var userName = '{!userName}';         
+        var leadSource = '{!leadSource}';
+        if(leadSource == '{!$Label.Lead_Source_Market_Study}'){
+            $("#privacyPolicyLink").attr("href", "{!$Label.Privacy_Policy_Link_Market_Study}");
+            $("#imprintLink").attr("href", "{!$Label.Imprint_Link_Market_Study}");
+        }
+        
+        var isUnsubscribed = {!isUnsubscribed}; 
+        if(userName != ''){               		
+            if(isUnsubscribed == true){
+                $('#unsubscribeButtonSection').addClass("slds-hide");
+                $('#unsubscribedSection').removeClass("slds-hide");
+                $('#unsubscribedSectionMessage').html("{!$Label.Already_Unsubscribed}");
+            }
+            else{
+                $('#unsubscribeButtonSection').removeClass("slds-hide"); 
+            }
+        }
+        else{
+            $('#recordNotFoundSection').removeClass("slds-hide");
+        } 
+        $("#inputEmail").keyup(function(){
+                    $('#inputEmailContainer').removeClass('slds-has-error');
+                    $('#error-message').addClass("slds-hide");
+                    $('#invalidEmail').addClass("slds-hide");
+        }); 
+        $('#myForm').submit(function(ev){
+            var emailId = $('#inputEmail').val();
+            if(emailId != ''){                       
+                Visualforce.remoting.Manager.invokeAction(
+                    '{!$RemoteAction.UnsubscribeEmailCtlr.verifyEmailForUnsubscribe}',
+                    emailId,
+                    function(result, event){
+                        if (event.status){
+                            if(result == 0){
+                                $('#recordNotFoundSection').addClass("slds-hide");
+                                $('#unsubscribedSection').removeClass("slds-hide");
+                                $('#unsubscribedSectionBody').html("{!$Label.Please_check_your_email_to_unsubscribe}");
+                            }
+                            else if(result == 4){
+                                $('#recordNotFoundSection').addClass("slds-hide");
+                                $('#unsubscribedSection').removeClass("slds-hide");
+                                $('#unsubscribedSectionBody').html("{!$Label.Failure_In_Email_Sending}");
+                            }
+                                else if(result == 1){
+                                    $('#inputEmailContainer').addClass('slds-has-error');
+                                    $('#error-message').removeClass("slds-hide");
+                                    $('#error-message').html("{!$Label.You_are_not_subscribed_to_our_E_Mail_newsletter}"
+                                                                 +"<br/><span style='color:black;'>{!$Label.Please_click_here_to_subscribe}</span>"
+                                                                 +"<span class='linksOnPage'>"
+                                                                 +"<a href='{!$Label.Hermes_Pharma_Contact_Us}'>"
+                                                                 +"Contact Us</a></span>"); 
+                                }
+                                    else if(result == 2){
+                                        $('#inputEmailContainer').addClass('slds-has-error');
+                                        $('#error-message').removeClass("slds-hide");
+                                        $('#error-message').html("{!$Label.Duplicate_Email_Found}");
+                                    }
+                                        else if(result == 3){
+                                            $('#recordNotFoundSection').addClass("slds-hide");
+                                            $('#unsubscribedSection').removeClass("slds-hide");
+                        		            $('#unsubscribedSectionBody').html("{!$Label.Already_Unsubscribed}");
+                                        }
+                                            else if(result == 5){
+                                                $('#inputEmailContainer').addClass('slds-has-error');
+                                                $('#error-message').removeClass("slds-hide");
+                                                $('#error-message').html("{!$Label.Email_Field_is_blank}");
+                                            }
+                        }
+                    },
+                    {escape: true}
+                );       
+            }
+            else{
+                $('#inputEmailContainer').addClass('slds-has-error');
+                $('#error-message').removeClass("slds-hide");
+                $('#error-message').html("{!$Label.Email_Address_is_Required}");
+            }
+            ev.preventDefault();
+        });
+    });
+    
+    //When User clicks on Unsubscribe this function will be called.
+    function clickUnsubscribe(){
+        var unsubscribeValues = {
+                "recordId" 		 	: '{!recordId}',
+                "currentPageName" 	: '{!currentPageName}',
+                "ipAddress" 		: '{!ipAddress}',
+                "emailOption" 		: false,
+                "telephoneOption" 	: false,
+                "postOption" 		: false
+            };
+        Visualforce.remoting.Manager.invokeAction(
+            '{!$RemoteAction.UnsubscribeEmailCtlr.unsubscribeEmail}',
+            JSON.stringify(unsubscribeValues),
+            function(result, event){
+                if (event.status) {
+                    if(result == 0){
+                        $('#unsubscribeButtonSection').addClass("slds-hide");
+                        $('#unsubscribedSection').removeClass("slds-hide");
+                    }
+                    else if(result == 3){
+                        $('#unsubscribeButtonSection').addClass("slds-hide");
+                        $('#unsubscribedSection').removeClass("slds-hide");
+                        $('#unsubscribedSectionMessage').html("{!$Label.Already_Unsubscribed}");
+                    }
+                        else if(result == 4){
+                            $('#unsubscribeButtonSection').addClass("slds-hide");
+                            $('#unsubscribedSection').removeClass("slds-hide");
+                            $('#unsubscribedSectionBody').html("{!$Label.Permission_Required_To_Update}");
+                        }
+                            else if(result == 2){
+                                $('#unsubscribeButtonSection').addClass("slds-hide");
+                                $('#unsubscribedSection').removeClass("slds-hide");
+                                $('#unsubscribedSectionBody').html("{!$Label.Duplicate_Email_Found}");
+                            }
+                                else if(result == 1){
+                                    $('#unsubscribeButtonSection').addClass("slds-hide");
+                                    $('#recordNotFoundSection').removeClass("slds-hide");
+                                }
+                    			else if(result == 5){
+                                	$('#unsubscribeButtonSection').addClass("slds-hide");
+                                	$('#unsubscribedSection').removeClass("slds-hide");
+                                	$('#unsubscribedSectionBody').html("{!$Label.Record_Not_Updated}");    
+                                }
+                }
+            },
+            {escape: true}
+        );
+    }
+    </script>
+    
+</apex:page>
